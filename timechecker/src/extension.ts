@@ -5,7 +5,7 @@ let myStatusBarItem: vscode.StatusBarItem;
 
 export function activate(context: vscode.ExtensionContext) {
 	myStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 1000);
-	let startTime = dayjs();
+	const startTime = dayjs();
 	
 	setInterval(() => {
 		let totalMinute = dayjs().diff(startTime, 'minute');
@@ -15,13 +15,11 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function minuteFormater(minute: number) {
-	let hours: number;
-	let minutes : number;
-  if (minute < 60) {
+	if (minute < 60) {
 		return `${minute}m`;
 	} else {
-		hours   = minute / 60;
-		minutes = minute % 60;
+		let hours   = minute / 60;
+		let minutes = minute % 60;
 		return `${Math.floor(hours)}h${minutes}m`;
 	}
 }
