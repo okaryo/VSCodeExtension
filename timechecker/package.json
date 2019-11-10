@@ -5,7 +5,7 @@
 	"publisher": "okaryo",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/okaryo/VSCodeExtension/timechecker"
+		"url": "https://github.com/okaryo/VSCodeExtension/tree/master/timechecker"
 	},
 	"version": "0.0.1",
 	"engines": {
