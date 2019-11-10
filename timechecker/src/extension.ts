@@ -8,24 +8,20 @@ export function activate(context: vscode.ExtensionContext) {
 	let startTime = dayjs();
 	
 	setInterval(() => {
-		let totalSecond = dayjs().diff(startTime, 'second');
-		myStatusBarItem.text = `${dayjs().format('YYYY-MM-DD HH:mm:ss')}(total: ${secondFormater(totalSecond)})`;
+		let totalMinute = dayjs().diff(startTime, 'minute');
+		myStatusBarItem.text = `${dayjs().format('YYYY-MM-DD HH:mm')}(total: ${minuteFormater(totalMinute)})`;
 		myStatusBarItem.show();
 	}, 1000);
 }
 
-function secondFormater(second: number) {
+function minuteFormater(minute: number) {
 	let hours: number;
 	let minutes : number;
-  if (second < 60) {
-		return '0m';
-	} else if (second < 60 * 60) {
-		minutes = second / 60;
-		return `${Math.floor(minutes)}m`;
+  if (minute < 60) {
+		return `${minute}m`;
 	} else {
-		hours   = second / (60 * 60);
-		second  %= 60 * 60;
-		minutes = second / 60;
-		return `${Math.floor(hours)}h${Math.floor(minutes)}m`;
+		hours   = minute / 60;
+		minutes = minute % 60;
+		return `${Math.floor(hours)}h${minutes}m`;
 	}
 }
