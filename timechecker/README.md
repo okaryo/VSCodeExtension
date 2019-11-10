@@ -1,8 +1,7 @@
 # timechecker README
 
 ## Features
-- Current time is displayed at the status bar.
-- Total time from opening editor is displayed together.
+- Current time and Passed time since opening a editor-window is displayed at the status bar.
 
 ## Requirements
 
@@ -11,6 +10,10 @@
 ## Known Issues
 
 ## Release Notes
+
+### 0.0.4
+
+Fix several things
 
 ### 0.0.1
 
