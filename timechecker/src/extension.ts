@@ -11,25 +11,34 @@ export function activate(context: vscode.ExtensionContext) {
 	let totalTime: number = 0;
 	
 
+	// setInterval(() => {
+	// 	if (windowState.focused) {
+	// 		if (totalTime === oneDayTime) {
+	// 			totalTime = 0;
+	// 		}
+  //     totalTime ++;
+	// 		myStatusBarItem.text = `${dayjs().format('YYYY-MM-DD HH:mm')}(total: ${timeFormater(totalTime)})`;
+	// 		myStatusBarItem.show();
+	// 	}
+	// }, 1000);
 	setInterval(() => {
 		if (windowState.focused) {
 			if (totalTime === oneDayTime) {
 				totalTime = 0;
 			}
       totalTime ++;
-			myStatusBarItem.text = `${dayjs().format('YYYY-MM-DD HH:mm')}(total: ${timeFormater(totalTime)})`;
+			myStatusBarItem.text = `${dayjs().format('YYYY-MM-DD HH:mm')}(total: ${timeFormater(3595)})`;
 			myStatusBarItem.show();
 		}
 	}, 1000);
 }
 
 function timeFormater(t: number) {
-	if (t > 60 * 60) {
-		return `${t / 60}m`;
+	if (t < 60 * 60) {
+		return `${Math.floor(t / 60)}m`;
 	} else {
-		let hours: number = t / (60 * 60);
-		t %= 60;
-		let minutes: number = t / 60;
+		let hours: number   = t / (60 * 60);
+		let minutes: number = t % (60 * 60);
 		return `${Math.floor(hours)}h${Math.floor(minutes)}m`;
 	}
 }
