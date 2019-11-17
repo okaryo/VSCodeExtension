@@ -11,23 +11,13 @@ export function activate(context: vscode.ExtensionContext) {
 	let totalTime: number = 0;
 	
 
-	// setInterval(() => {
-	// 	if (windowState.focused) {
-	// 		if (totalTime === oneDayTime) {
-	// 			totalTime = 0;
-	// 		}
-  //     totalTime ++;
-	// 		myStatusBarItem.text = `${dayjs().format('YYYY-MM-DD HH:mm')}(total: ${timeFormater(totalTime)})`;
-	// 		myStatusBarItem.show();
-	// 	}
-	// }, 1000);
 	setInterval(() => {
 		if (windowState.focused) {
 			if (totalTime === oneDayTime) {
 				totalTime = 0;
 			}
       totalTime ++;
-			myStatusBarItem.text = `${dayjs().format('YYYY-MM-DD HH:mm')}(total: ${timeFormater(3595)})`;
+			myStatusBarItem.text = `${dayjs().format('YYYY-MM-DD HH:mm')}(total: ${timeFormater(totalTime)})`;
 			myStatusBarItem.show();
 		}
 	}, 1000);
