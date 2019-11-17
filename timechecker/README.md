@@ -17,7 +17,7 @@ Total time is counted only when window is focused.
 
 ### 0.0.2 ~ 0.0.6
 
-Fix several things
+Fix several bugs
 
 ### 0.0.1
 
