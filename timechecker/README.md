@@ -11,6 +11,10 @@
 
 ## Release Notes
 
+### 0.0.10
+
+small bugs was fixed
+
 ### 0.0.7
 
 Total time is counted only when window is focused.
