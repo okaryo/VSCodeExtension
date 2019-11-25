@@ -26,7 +26,7 @@ function timeFormater(t: number) {
 		return `${Math.floor(t / 60)}m`;
 	} else {
 		let hours: number   = t / (60 * 60);
-		t /= 60 * 60;
+		t %= 60 * 60;
 		let minutes: number = t / 60;
 		return `${Math.floor(hours)}h${Math.floor(minutes)}m`;
 	}
