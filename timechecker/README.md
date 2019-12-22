@@ -11,6 +11,10 @@
 
 ## Release Notes
 
+### 1.0.0
+
+1.0.0 Released!
+
 ### 0.0.10 ~ 0.0.11
 
 small bugs was fixed
