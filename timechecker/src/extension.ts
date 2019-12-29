@@ -2,16 +2,15 @@ import * as vscode from 'vscode';
 import * as dayjs from 'dayjs';
 
 let myStatusBarItem: vscode.StatusBarItem;
+const oneDayTime: number = 60 * 60 * 24;
 
 export function activate(context: vscode.ExtensionContext) {
 	myStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 1000);
-	const startDate: number = dayjs().date();
 	let totalTime: number = 0;
 
 	setInterval(() => {
 		if (vscode.window.state.focused) {
-			let nowDate: number = dayjs().date();
-			if (startDate !== nowDate) {
+			if (totalTime === oneDayTime) {
 				totalTime = 0;
 			}
       totalTime ++;
